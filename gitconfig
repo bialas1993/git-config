@@ -1,0 +1,38 @@
+[core]
+	autocrlf = input
+[color]
+	ui = auto
+
+[alias]
+	drzewo = "log --pretty=format:'%Cred%h%Creset %C(bold blue)<%an>%Creset%C(yellow)%d%Creset %Cgreen(%cr)%Creset%n%w(80,8,8)%s' --graph"
+	duzedrzewo = log --pretty=format:'%Cred%h%Creset %C(bold blue)<%an>%Creset%C(yellow)%d%Creset %Cgreen(%cr)%Creset%n%w(80,8,8)%s%n' --graph --name-status
+	komity = log --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s' --date=iso
+
+	ktoto = "!sh -c 'git log -i -1 --pretty=\"format::%an <%ae>\n\" --author=\"$1\"' -"
+	coto = show -s --pretty='tformat::%h (%s, %ad)' --date=short
+
+	cotam = !sh -c 'git fetch' && git log --oneline HEAD..origin/$1
+	cotammistrzu = !sh -c 'git fetch' && git log --oneline HEAD..origin/master
+	ktotam = !sh -c 'git shortlog HEAD..origin/$0'
+	ktotammistrzu = !sh -c 'git shortlog HEAD..origin/master'
+
+	tagi = show-ref --tags
+	pchajtagi = push --tags
+	tagujzdata = !sh -c 'git tag "$0"_$(date "+%y-%m-%d_%H-%M-%S")'
+
+	pojebalosie = reset --hard
+
+	df = diff
+	nabok = stash
+	zboku = stash apply
+	sprzataj = clean
+	sprzatajwszystko = !sh -c 'git clean -x' &amp;&amp; git reset --hard
+	fo = fetch origin
+	s = status
+	co = checkout
+	po = push origin
+
+[push]
+	default = current
+[include]
+	path = gitconfig_private
