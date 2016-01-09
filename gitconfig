@@ -1,5 +1,6 @@
 [core]
 	autocrlf = input
+        excludesfile = ~/.gitignore_global
 [color]
 	ui = auto
 
@@ -35,4 +36,4 @@
 [push]
 	default = current
 [include]
-	path = gitconfig_private
+	path = ~/.gitconfig_private
