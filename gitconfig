@@ -32,8 +32,9 @@
 	s = status
 	co = checkout
 	po = push origin
+        mo = merge origin/master
 
 [push]
 	default = current
 [include]
-	path = ~/.gitconfig_private
+	path = .git/gitconfig_private
