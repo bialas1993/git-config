@@ -5,29 +5,28 @@
 	ui = auto
 
 [alias]
-	drzewo = "log --pretty=format:'%Cred%h%Creset %C(bold blue)<%an>%Creset%C(yellow)%d%Creset %Cgreen(%cr)%Creset%n%w(80,8,8)%s' --graph"
-	duzedrzewo = log --pretty=format:'%Cred%h%Creset %C(bold blue)<%an>%Creset%C(yellow)%d%Creset %Cgreen(%cr)%Creset%n%w(80,8,8)%s%n' --graph --name-status
-	komity = log --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s' --date=iso
+	tree = "log --pretty=format:'%Cred%h%Creset %C(bold blue)<%an>%Creset%C(yellow)%d%Creset %Cgreen(%cr)%Creset%n%w(80,8,8)%s' --graph"
+	btree = log --pretty=format:'%Cred%h%Creset %C(bold blue)<%an>%Creset%C(yellow)%d%Creset %Cgreen(%cr)%Creset%n%w(80,8,8)%s%n' --graph --name-status
+	commits = log --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s' --date=iso
 
-	ktoto = "!sh -c 'git log -i -1 --pretty=\"format::%an <%ae>\n\" --author=\"$1\"' -"
-	coto = show -s --pretty='tformat::%h (%s, %ad)' --date=short
+	who = "!sh -c 'git log -i -1 --pretty=\"format::%an <%ae>\n\" --author=\"$1\"' -"
+	what = show -s --pretty='tformat::%h (%s, %ad)' --date=short
 
-	cotam = !sh -c 'git fetch' && git log --oneline HEAD..origin/$1
-	cotammistrzu = !sh -c 'git fetch' && git log --oneline HEAD..origin/master
-	ktotam = !sh -c 'git shortlog HEAD..origin/$0'
-	ktotammistrzu = !sh -c 'git shortlog HEAD..origin/master'
+	whatsup = !sh -c 'git fetch' && git log --oneline HEAD..origin/$1
+	whatsupmaster = !sh -c 'git fetch' && git log --oneline HEAD..origin/master
+	whois = !sh -c 'git shortlog HEAD..origin/$0'
+	whoismaster = !sh -c 'git shortlog HEAD..origin/master'
 
-	tagi = show-ref --tags
-	pchajtagi = push --tags
-	tagujzdata = !sh -c 'git tag "$0"_$(date "+%y-%m-%d_%H-%M-%S")'
+	tags = show-ref --tags
+	ptags = push --tags
+	datetags = !sh -c 'git tag "$0"_$(date "+%y-%m-%d_%H-%M-%S")'
 
-	pojebalosie = reset --hard
+	fuckup = reset --hard
 
 	df = diff
-	nabok = stash
-	zboku = stash apply
-	sprzataj = clean
-	sprzatajwszystko = !sh -c 'git clean -x' &amp;&amp; git reset --hard
+	hide = stash
+	show = stash apply
+	cleanmaster = !sh -c 'git clean -x' &amp;&amp; git reset --hard
 	fo = fetch origin
 	s = status
 	co = checkout
@@ -42,10 +41,9 @@
 	default = current
 [include]
         path = ~/.gitconfig_private
-	#path = .git/gitconfig_private
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
+#[difftool "sourcetree"]
+#	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+#	path = 
+#[mergetool "sourcetree"]
+#	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+#	trustExitCode = true
