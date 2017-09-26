@@ -1,7 +1,7 @@
 #!/bin/bash
 
 function match {
-	if [[ $mes =~ ^(feature|bugfix)\/(TVN[A-Z]+\-[0-9]+).* ]]; then
+	if [[ $mes =~ ^(feature|bugfix)\/([A-Z]+\-[0-9]+).* ]]; then
 		return 0
 	fi
 
