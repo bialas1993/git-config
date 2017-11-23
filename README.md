@@ -17,3 +17,8 @@ cp ~/.git-config/examples/.* ~/
 2. Customize `~/.gitconfig_private` and `~/.gitignore_global`.
 3. Voila.
 
+## Global hooks
+``` bash
+git config --global init.templatedir '~/.git-config'
+```
+Command add global git directory struct - copy your hooks to any git repository when you execute `git init`
