@@ -1,6 +1,6 @@
 [core]
 	autocrlf = input
-        excludesfile = ~/.gitignore_global
+    excludesfile = ~/.gitignore_global
 [color]
 	ui = auto
 
@@ -34,16 +34,12 @@
         back = checkout @{-1}
         mu = merge @{u}
 	po = push origin
-
-        delete-merged-branches = "!git co master && git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
+	build = "!sh -c '~/.git-config/bin/build.sh'"
+    delete-merged-branches = "!git co master && git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
 
 [push]
 	default = current
 [include]
         path = ~/.gitconfig_private
-#[difftool "sourcetree"]
-#	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-#	path = 
-#[mergetool "sourcetree"]
-#	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-#	trustExitCode = true
+[init]
+	templatedir = ~/.git-config
